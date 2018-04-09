@@ -21,7 +21,7 @@ namespace Golf_Reflex
         Song Menu;
 
         Ball b;
-        GameMenu gm;
+        GameScreens gs;
 
         
         public GolfReflex()
@@ -43,8 +43,8 @@ namespace Golf_Reflex
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
+            b = new Ball(new Vector2(graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2), new Vector2(300, 300));
+            gs = new GameScreens();
             base.Initialize();
         }
 
@@ -59,7 +59,7 @@ namespace Golf_Reflex
 
             // TODO: use this.Content to load your game content here
             b.LoadContent(Content);
-            gm.LoadContent(Content);
+            gs.LoadContent(Content);
             //logo = Content.Load<Texture2D>("logo");
             //Menu = Content.Load<Song>("Menu");
 
@@ -71,7 +71,7 @@ namespace Golf_Reflex
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+
         }
 
         /// <summary>
@@ -83,9 +83,7 @@ namespace Golf_Reflex
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 Exit();
-
-            // TODO: Add your update logic here
-
+            gs.Update(gameTime, graphics);
             base.Update(gameTime);
         }
 
@@ -97,11 +95,8 @@ namespace Golf_Reflex
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            
-
-            // TODO: Add your drawing code here
             spriteBatch.Begin();
-            //Draw(spriteBatch);
+            gs.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);

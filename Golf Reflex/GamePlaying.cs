@@ -14,5 +14,8 @@ namespace Golf_Reflex
 {
     class GamePlaying : IGameState
     {
+        public GamePlaying(GameScreens gs) : base(gs)
+        {
+        }
     }
 }

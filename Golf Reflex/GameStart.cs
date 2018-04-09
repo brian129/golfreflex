@@ -18,28 +18,22 @@ namespace Golf_Reflex
 {
     class GameStart : IGameState
     {
-        private SpriteFont font;
-        private Texture2D texture;
+        GameScreens gamescreen;
+        SpriteFont font;
 
         // Text to display to user
-        string startText = "Tap to Start";
-        
+        public string startText = "Tap to Start";
+
         public Vector2 Position = new Vector2(100,100);
 
-        public GameStart()
+        public GameStart(GameScreens gs) : base(gs)
         {
             
         }
 
-        //This function gets the monogame content manager to get stuff
-        public void LoadContent(ContentManager content)
-        {
-            font = content.Load<SpriteFont>("font");
-        }
-
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, startText,Position, Color.Black);
+            spriteBatch.DrawString(font, startText, Position, Color.Black);
         }
 
         public override void Update(GameTime gameTime, GraphicsDeviceManager graphics)
@@ -48,7 +42,7 @@ namespace Golf_Reflex
             //check for one touch then change state
             if(tc.Count > 0)
             {
-
+                gamescreen.stateMachine.Change("Playing");
             }
         }
 

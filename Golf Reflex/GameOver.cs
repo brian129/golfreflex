@@ -14,5 +14,8 @@ namespace Golf_Reflex
 {
     class GameOver : IGameState
     {
+        public GameOver(GameScreens gs) : base(gs)
+        {
+        }
     }
 }

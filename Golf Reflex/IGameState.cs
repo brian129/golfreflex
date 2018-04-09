@@ -16,6 +16,13 @@ namespace Golf_Reflex
 {
     class IGameState : IState
     {
+        public GameScreens gameScreen;
+
+        public IGameState(GameScreens gs)
+        {
+            gameScreen = gs;
+        }
+
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             throw new NotImplementedException();

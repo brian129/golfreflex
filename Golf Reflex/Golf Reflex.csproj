@@ -68,6 +68,7 @@
     <Compile Include="BallStopped.cs" />
     <Compile Include="GameOver.cs" />
     <Compile Include="GamePlaying.cs" />
+    <Compile Include="GameScreens.cs" />
     <Compile Include="GameStart.cs" />
     <Compile Include="IBallState.cs" />
     <Compile Include="IGameState.cs" />
