@@ -16,16 +16,14 @@ namespace Golf_Reflex
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Texture2D ball;
+        SpriteFont font;
         Texture2D logo;
         Song Menu;
 
-        // Text to display to user
-        string gameOverText = "Game Over";
-        string tapToStartText = "Tap to Start";
-        string scoreText = "Score : {0}";
+        Ball b;
+        GameMenu gm;
 
-
+        
         public GolfReflex()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -60,10 +58,10 @@ namespace Golf_Reflex
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            //ball = Content.Load<Texture2D>("ball");
-
-            logo = Content.Load<Texture2D>("logo");
-            Menu = Content.Load<Song>("Menu");
+            b.LoadContent(Content);
+            gm.LoadContent(Content);
+            //logo = Content.Load<Texture2D>("logo");
+            //Menu = Content.Load<Song>("Menu");
 
         }
 
@@ -99,21 +97,11 @@ namespace Golf_Reflex
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // Calculate the center of the screen
-            var center = graphics.GraphicsDevice.Viewport.Bounds.Center.ToVector2();
-
-            // Calculate half the width of the screen
-            var half = graphics.GraphicsDevice.Viewport.Height / 2;
-
-            // Calculate aspect ratio of the MonkeyTap logo
-            var aspect = (float)logo.Height / logo.Width;
-
-            // Calculate position of logo on screen
-            var rect = new Rectangle((int)center.X - (half / 2), 0, half, (int)(half * aspect));
+            
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            spriteBatch.Draw(logo, destinationRectangle: rect, Color.White);
+            //Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);

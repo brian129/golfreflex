@@ -68,7 +68,7 @@
     <Compile Include="BallStopped.cs" />
     <Compile Include="GameOver.cs" />
     <Compile Include="GamePlaying.cs" />
-    <Compile Include="GameMenu.cs" />
+    <Compile Include="GameStart.cs" />
     <Compile Include="IBallState.cs" />
     <Compile Include="IGameState.cs" />
     <Compile Include="IState.cs" />
@@ -79,6 +79,7 @@
     <Compile Include="StateMachine.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="font.spritefont" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>

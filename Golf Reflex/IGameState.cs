@@ -16,22 +16,22 @@ namespace Golf_Reflex
 {
     class IGameState : IState
     {
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             throw new NotImplementedException();
         }
 
-        public void Enter()
+        public virtual void Enter()
         {
             throw new NotImplementedException();
         }
 
-        public void Exit()
+        public virtual void Exit()
         {
             throw new NotImplementedException();
         }
 
-        public void Update(GameTime gameTime, GraphicsDeviceManager graphics)
+        public virtual void Update(GameTime gameTime, GraphicsDeviceManager graphics)
         {
             throw new NotImplementedException();
         }

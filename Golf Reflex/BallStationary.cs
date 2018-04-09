@@ -12,11 +12,16 @@ using Android.Widget;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
 
 namespace Golf_Reflex
 {
     class BallStationary : IBallState
     {
+
+        private Rectangle drag;
+        private TouchCollection tl = new TouchCollection();
+
         public BallStationary(Ball b) : base(b)
         {
         }
@@ -44,7 +49,7 @@ namespace Golf_Reflex
         {
             KeyboardState state = Keyboard.GetState();
             //checks space keypress and changes state to jumping
-            if (state.IsKeyDown(Keys.Space))
+            if (CheckBallTouch(drag, tl))
             {
                 //player.stateMachine.Change("Jumping");
             }
@@ -57,6 +62,22 @@ namespace Golf_Reflex
                 //player.stateMachine.Change("Standing");
             }
             base.Update(gameTime, graphics);
+        }
+
+        //checks if player is touching the ball
+        public bool CheckBallTouch(Rectangle target, TouchCollection touchCollection)
+        {
+            if (touchCollection.Count > 0)
+            {
+                foreach (var touch in touchCollection)
+                {
+                    if (target.Contains(touch.Position))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

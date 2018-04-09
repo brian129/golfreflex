@@ -60,20 +60,6 @@ namespace Golf_Reflex
         }
 
 
-        //checks if player is touching the ball
-        public bool CheckBallTouch(Rectangle target, TouchCollection touchCollection)
-        {
-            if (touchCollection.Count > 0)
-            {
-                foreach (var touch in touchCollection)
-                {
-                    if (target.Contains(touch.Position))
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
+        
     }
 }
