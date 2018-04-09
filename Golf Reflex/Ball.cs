@@ -75,10 +75,5 @@ namespace Golf_Reflex
             }
             return false;
         }
-
-        public virtual void Update()
-        {
-                        
-        }
     }
 }
