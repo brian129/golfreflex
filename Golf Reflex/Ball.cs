@@ -36,7 +36,6 @@ namespace Golf_Reflex
             stateMachine = new StateMachine<IBallState>(new BallStationary(this));
             stateMachine.Add("Stationary", new BallStationary(this));
             stateMachine.Add("Rolling", new BallRolling(this));
-            stateMachine.Add("Bounce", new BallBounce(this));
             stateMachine.Add("Stopped", new BallStopped(this));
         }
 

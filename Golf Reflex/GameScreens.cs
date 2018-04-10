@@ -24,10 +24,10 @@ namespace Golf_Reflex
         //constructor 
         public GameScreens()
         {
-            stateMachine = new StateMachine<IGameState>(new GameStart(this));
-            stateMachine.Add("Start", new GameStart(this));
-            stateMachine.Add("Playing", new GamePlaying(this));
-            stateMachine.Add("Over", new GameOver(this));
+            stateMachine = new StateMachine<IGameState>(new GameStart(this, font));
+            stateMachine.Add("Start", new GameStart(this, font));
+            stateMachine.Add("Playing", new GamePlaying(this, font));
+            stateMachine.Add("Over", new GameOver(this, font));
         }
 
         //This function gets the monogame content manager to get stuff

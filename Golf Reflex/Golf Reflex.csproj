@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Activity1.cs" />
     <Compile Include="Ball.cs" />
-    <Compile Include="BallBounce.cs" />
     <Compile Include="BallRolling.cs" />
     <Compile Include="BallStationary.cs" />
     <Compile Include="BallStopped.cs" />

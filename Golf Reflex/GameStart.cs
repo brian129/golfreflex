@@ -19,21 +19,22 @@ namespace Golf_Reflex
     class GameStart : IGameState
     {
         GameScreens gamescreen;
-        SpriteFont font;
+        SpriteFont startFont;
 
         // Text to display to user
         public string startText = "Tap to Start";
 
         public Vector2 Position = new Vector2(100,100);
 
-        public GameStart(GameScreens gs) : base(gs)
+        public GameStart(GameScreens gs, SpriteFont font) : base(gs)
         {
-            
+            gamescreen = gs;
+            startFont = gamescreen.font;
         }
-
+        
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, startText, Position, Color.Black);
+            spriteBatch.DrawString(startFont, startText, Position, Color.Black);
         }
 
         public override void Update(GameTime gameTime, GraphicsDeviceManager graphics)

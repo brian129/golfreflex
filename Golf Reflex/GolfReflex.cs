@@ -22,6 +22,7 @@ namespace Golf_Reflex
 
         Ball b;
         GameScreens gs;
+        GameStart gStart;
 
         
         public GolfReflex()
@@ -60,6 +61,7 @@ namespace Golf_Reflex
             // TODO: use this.Content to load your game content here
             b.LoadContent(Content);
             gs.LoadContent(Content);
+
             //logo = Content.Load<Texture2D>("logo");
             //Menu = Content.Load<Song>("Menu");
 
